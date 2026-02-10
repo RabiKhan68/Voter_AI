@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+}
+
+input, button {
+    display: block;
+    width: 95%;
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 16px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#result {
+    font-weight: bold;
+    margin-top: 10px;
+}
+</style>
+<body>
+    <div class="container">
+        <h2>Online Voting System</h2>
+
+        <input id="age" type="number" placeholder="Enter age (e.g., 25)">
+        <input id="income" type="number" min="0" max="2"
+            placeholder="Enter income level (0 = low, 1 = medium, 2 = high)">
+        <input id="education" type="number" min="0" max="2"
+            placeholder="Enter education level (0 = high school, 1 = college, 2 = graduate)">
+
+        <button onclick="predict()">Predict Party</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
