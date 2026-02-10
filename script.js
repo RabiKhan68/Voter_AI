@@ -28,3 +28,25 @@ async function predict() {
             "Error: " + error.message;
     }
 }
+
+async function loadLeaderboard() {
+    let response = await fetch("https://inspiration.pythonanywhere.com/leaderboard");
+    let data = await response.json();
+
+    let board = document.getElementById("board");
+    board.innerHTML = `<h3>Leader: ${data.leader}</h3>`;
+
+    for (let party in data.parties) {
+        let info = data.parties[party];
+        board.innerHTML += `
+            <p>
+                <b>${party}</b>: 
+                ${info.votes} votes 
+                (${info.percentage}%)
+            </p>
+        `;
+    }
+}
+
+// Load when page opens
+loadLeaderboard();
